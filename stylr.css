@@ -1,0 +1,275 @@
+/* Basic */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background: #fffaf5;
+    line-height: 1.6;
+}
+
+:root {
+    --orange: #e85d04;
+    --yellow: #ffba08;
+    --dark: #292019;
+}
+
+section {
+    padding: 55px 20px;
+    text-align: center;
+}
+
+section h2 {
+    margin-bottom: 15px;
+}
+
+/* Navbar */
+header {
+    background: var(--dark);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav {
+    max-width: 1100px;
+    margin: auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h2 {
+    color: var(--yellow);
+    margin: 0;
+}
+
+.links {
+    display: flex;
+    gap: 18px;
+}
+
+.links a {
+    color: white;
+    text-decoration: none;
+}
+
+.links a:hover {
+    color: var(--yellow);
+}
+
+/* Home */
+.hero {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background:
+        linear-gradient(#0009, #0009),
+        url("images/restaurant.jpg") center/cover no-repeat;
+}
+
+.welcome {
+    color: var(--yellow);
+    letter-spacing: 4px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 8vw, 85px);
+    color: var(--yellow);
+    line-height: 1.2;
+}
+
+.hero h2 {
+    font-size: clamp(22px, 4vw, 35px);
+    margin: 15px 0;
+}
+
+.hero p {
+    margin-bottom: 15px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background: var(--orange);
+    color: white;
+    padding: 10px 22px;
+    margin: 8px 4px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #bd4800;
+}
+
+.outline {
+    background: transparent;
+    border: 2px solid white;
+}
+
+/* About */
+#about p {
+    max-width: 650px;
+    margin: 15px auto;
+}
+
+.about-img {
+    width: 100%;
+    max-width: 500px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Menu */
+.menu-section {
+    background: white;
+}
+
+.menu {
+    max-width: 1100px;
+    margin: 25px auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.food {
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px #0002;
+    transition: 0.3s;
+}
+
+.food:hover {
+    transform: translateY(-5px);
+}
+
+.food img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.food h3 {
+    color: var(--orange);
+    margin-top: 8px;
+}
+
+.food b {
+    color: var(--orange);
+}
+
+/* Today's Special */
+.special {
+    background: var(--dark);
+    color: white;
+}
+
+.special h2 {
+    color: var(--yellow);
+    font-size: 40px;
+}
+
+.special img {
+    width: 100%;
+    max-width: 380px;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin: 15px 0;
+}
+
+.special h3 {
+    font-size: 25px;
+}
+
+.special p:not(.welcome) {
+    max-width: 500px;
+    margin: 10px auto;
+}
+
+.price {
+    color: var(--yellow);
+    font-size: 30px;
+    font-weight: bold;
+    margin: 15px;
+}
+
+.price del {
+    color: #aaa;
+    font-size: 20px;
+}
+
+/* Contact */
+form {
+    max-width: 350px;
+    margin: 20px auto;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font: inherit;
+}
+
+/* Footer */
+footer {
+    background: var(--dark);
+    color: white;
+    padding: 25px 15px;
+    text-align: center;
+}
+
+footer h3 {
+    color: var(--yellow);
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .menu {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 450px) {
+    .menu {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+}
